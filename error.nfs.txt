@@ -1,0 +1,4 @@
+exportfs: /etc/exports [4]: Neither 'subtree_check' or 'no_subtree_check' specified for export "*:/home/nfs".
+  Assuming default behaviour ('no_subtree_check').
+  NOTE: this default has changed since nfs-utils version 1.0.x
+
