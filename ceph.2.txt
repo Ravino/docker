@@ -1,0 +1,34 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ceph-common is already the newest version (12.2.11+dfsg1-2~bpo9+1).
+The following packages were automatically installed and are no longer required:
+  aufs-dkms aufs-tools ceph-base cgroupfs-mount containerd.io
+  javascript-common libaio1 libboost-chrono1.67.0 libboost-context1.67.0
+  libboost-coroutine1.67.0 libcpupower1 libjs-jquery libleveldb1v5
+  liblttng-ust-ctl2 liblttng-ust0 libopts25 librgw2 libtxc-dxtn-s2tc liburcu4
+  linux-kbuild-4.9 ntp pigz python-backports.ssl-match-hostname python-blinker
+  python-cached-property python-click python-colorama python-docker
+  python-dockerpty python-docopt python-flask python-funcsigs
+  python-functools32 python-itsdangerous python-jinja2 python-jsonschema
+  python-markupsafe python-mock python-pbr python-pyinotify python-rgw
+  python-simplejson python-texttable python-websocket python-werkzeug
+  python-yaml
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 165 not upgraded.
+2 not fully installed or removed.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Setting up ceph-common (12.2.11+dfsg1-2~bpo9+1) ...
+dpkg: error processing package ceph-common (--configure):
+ subprocess installed post-installation script returned error exit status 8
+dpkg: dependency problems prevent configuration of ceph-base:
+ ceph-base depends on ceph-common (= 12.2.11+dfsg1-2~bpo9+1); however:
+  Package ceph-common is not configured yet.
+
+dpkg: error processing package ceph-base (--configure):
+ dependency problems - leaving unconfigured
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Errors were encountered while processing:
+ ceph-common
+ ceph-base
+E: Sub-process /usr/bin/dpkg returned an error code (1)
