@@ -1,0 +1,103 @@
+[ceph_deploy.conf][DEBUG ] found configuration file at: /root/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy install intelligence-master intelligence-1
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  testing                       : None
+[ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f05b4974680>
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[ceph_deploy.cli][INFO  ]  install_mds                   : False
+[ceph_deploy.cli][INFO  ]  stable                        : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[ceph_deploy.cli][INFO  ]  func                          : <function install at 0x7f05b4a786e0>
+[ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[ceph_deploy.cli][INFO  ]  install_all                   : False
+[ceph_deploy.cli][INFO  ]  repo                          : False
+[ceph_deploy.cli][INFO  ]  host                          : ['intelligence-master', 'intelligence-1']
+[ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[ceph_deploy.cli][INFO  ]  install_tests                 : False
+[ceph_deploy.cli][INFO  ]  repo_url                      : None
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  install_osd                   : False
+[ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[ceph_deploy.cli][INFO  ]  install_common                : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  dev                           : master
+[ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[ceph_deploy.cli][INFO  ]  release                       : None
+[ceph_deploy.cli][INFO  ]  install_mon                   : False
+[ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[ceph_deploy.install][DEBUG ] Installing stable version mimic on cluster ceph hosts intelligence-master intelligence-1
+[ceph_deploy.install][DEBUG ] Detecting platform for host intelligence-master ...
+[intelligence-master][DEBUG ] connected to host: intelligence-master 
+[intelligence-master][DEBUG ] detect platform information from remote host
+[intelligence-master][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: debian 9.8 stretch
+[intelligence-master][INFO  ] installing Ceph on intelligence-master
+[intelligence-master][INFO  ] Running command: env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q update
+[intelligence-master][DEBUG ] Hit:1 https://download.docker.com/linux/debian stretch InRelease
+[intelligence-master][DEBUG ] Ign:2 http://mirror.yandex.ru/debian stretch InRelease
+[intelligence-master][DEBUG ] Hit:3 http://mirror.yandex.ru/debian stretch-backports InRelease
+[intelligence-master][DEBUG ] Hit:4 http://mirror.yandex.ru/debian stretch Release
+[intelligence-master][DEBUG ] Hit:7 https://download.ceph.com/debian-mimic stretch InRelease
+[intelligence-master][DEBUG ] Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+[intelligence-master][DEBUG ] Reading package lists...
+[intelligence-master][INFO  ] Running command: env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q --no-install-recommends install ca-certificates apt-transport-https
+[intelligence-master][DEBUG ] Reading package lists...
+[intelligence-master][DEBUG ] Building dependency tree...
+[intelligence-master][DEBUG ] Reading state information...
+[intelligence-master][DEBUG ] apt-transport-https is already the newest version (1.4.9).
+[intelligence-master][DEBUG ] ca-certificates is already the newest version (20161130+nmu1+deb9u1).
+[intelligence-master][DEBUG ] The following packages were automatically installed and are no longer required:
+[intelligence-master][DEBUG ]   containerd.io libaio1 libcpupower1 libleveldb1v5 liblttng-ust-ctl2
+[intelligence-master][DEBUG ]   liblttng-ust0 librgw2 libtxc-dxtn-s2tc liburcu4 python-rgw
+[intelligence-master][DEBUG ] Use 'sudo apt autoremove' to remove them.
+[intelligence-master][DEBUG ] 0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+[intelligence-master][INFO  ] Running command: wget -O release.asc https://download.ceph.com/keys/release.asc
+[intelligence-master][WARNING] --2019-03-23 00:35:58--  https://download.ceph.com/keys/release.asc
+[intelligence-master][WARNING] Resolving download.ceph.com (download.ceph.com)... 158.69.68.124, 2607:5300:201:2000::3:58a1
+[intelligence-master][WARNING] Connecting to download.ceph.com (download.ceph.com)|158.69.68.124|:443... connected.
+[intelligence-master][WARNING] HTTP request sent, awaiting response... 200 OK
+[intelligence-master][WARNING] Length: 1645 (1.6K) [application/octet-stream]
+[intelligence-master][WARNING] Saving to: ‘release.asc’
+[intelligence-master][WARNING] 
+[intelligence-master][WARNING]      0K .                                                     100% 20.0M=0s
+[intelligence-master][WARNING] 
+[intelligence-master][WARNING] 2019-03-23 00:35:59 (20.0 MB/s) - ‘release.asc’ saved [1645/1645]
+[intelligence-master][WARNING] 
+[intelligence-master][INFO  ] Running command: apt-key add release.asc
+[intelligence-master][WARNING] Warning: apt-key output should not be parsed (stdout is not a terminal)
+[intelligence-master][DEBUG ] OK
+[intelligence-master][DEBUG ] add deb repo to /etc/apt/sources.list.d/
+[intelligence-master][INFO  ] Running command: env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q update
+[intelligence-master][DEBUG ] Hit:1 https://download.docker.com/linux/debian stretch InRelease
+[intelligence-master][DEBUG ] Ign:2 http://mirror.yandex.ru/debian stretch InRelease
+[intelligence-master][DEBUG ] Hit:3 http://mirror.yandex.ru/debian stretch-backports InRelease
+[intelligence-master][DEBUG ] Hit:4 http://mirror.yandex.ru/debian stretch Release
+[intelligence-master][DEBUG ] Hit:7 https://download.ceph.com/debian-mimic stretch InRelease
+[intelligence-master][DEBUG ] Hit:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+[intelligence-master][DEBUG ] Reading package lists...
+[intelligence-master][INFO  ] Running command: env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q --no-install-recommends install -o Dpkg::Options::=--force-confnew ceph ceph-osd ceph-mds ceph-mon radosgw
+[intelligence-master][DEBUG ] Reading package lists...
+[intelligence-master][DEBUG ] Building dependency tree...
+[intelligence-master][DEBUG ] Reading state information...
+[intelligence-master][DEBUG ] Some packages could not be installed. This may mean that you have
+[intelligence-master][DEBUG ] requested an impossible situation or if you are using the unstable
+[intelligence-master][DEBUG ] distribution that some required packages have not yet been created
+[intelligence-master][DEBUG ] or been moved out of Incoming.
+[intelligence-master][DEBUG ] The following information may help to resolve the situation:
+[intelligence-master][DEBUG ] 
+[intelligence-master][DEBUG ] The following packages have unmet dependencies:
+[intelligence-master][DEBUG ]  ceph-mon : Depends: ceph-base (= 10.2.11-2) but it is not going to be installed
+[intelligence-master][DEBUG ]  ceph-osd : PreDepends: ceph-common (= 10.2.11-2) but it is not going to be installed
+[intelligence-master][DEBUG ]             Depends: ceph-base (= 10.2.11-2) but it is not going to be installed
+[intelligence-master][DEBUG ]  radosgw : Depends: ceph-common (= 10.2.11-2) but it is not going to be installed
+[intelligence-master][DEBUG ]            Depends: librgw2 (= 10.2.11-2) but 12.2.11+dfsg1-2~bpo9+1 is to be installed
+[intelligence-master][WARNING] E: Unable to correct problems, you have held broken packages.
+[intelligence-master][ERROR ] RuntimeError: command returned non-zero exit status: 100
+[ceph_deploy][ERROR ] RuntimeError: Failed to execute command: env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q --no-install-recommends install -o Dpkg::Options::=--force-confnew ceph ceph-osd ceph-mds ceph-mon radosgw
+
